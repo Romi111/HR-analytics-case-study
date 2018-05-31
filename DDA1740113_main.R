@@ -1309,10 +1309,10 @@ conf_final
 #        No  777  64
 #       Yes  333 149
 
-#lets find k statistic for this model
+#lets find ks statistic for this model
 perf<-performance(pred,'tpr','fpr')
 ks<-max(perf@y.values[[1]]-perf@x.values[[1]])
-# k statistic for this model is 0.42
+# ks statistic for this model is 0.42
 #gain and lift chart
 gain<-performance(pred,'tpr','rpp')
 deciles<-performance(pred,'rpp')
@@ -1324,7 +1324,7 @@ k_stat_matrix$k_statistic<-round(k_stat_matrix$k_statistic,2)
 k_stat_matrix[which(k_stat_matrix$k_statistic==4.2),]
 plot(k_stat_matrix)
 abline(h=4.2,v=3.4)
-#kstatistic lies withinin first 4 deciles 
+#ks statistic lies withinin first 4 deciles 
 plot(gain)
 plot(perf)
 plotLift(test_pred,test$Attrition)
